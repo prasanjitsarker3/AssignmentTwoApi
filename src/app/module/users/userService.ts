@@ -68,19 +68,14 @@ const deletedUserFromDb = async (userId: number) => {
 const addProductToDB = async (userId: number, productData: any) => {
   const user = await User.findOne({ userId });
   if (!user) {
-    const error = new Error('User not found') as any;
-    error.statusCode = 404;
-    throw error;
+    throw new Error('User not found');
   }
 
-  if (!user.orders) {
-    user.orders = [];
-  }
-
+  user.orders = user.orders || [];
   user.orders.push(productData);
   await user.save();
-  const finalOrders = user.orders;
-  return finalOrders;
+
+  return user.orders;
 };
 
 //Get All Orders
