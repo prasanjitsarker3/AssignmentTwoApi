@@ -29,14 +29,14 @@ const userSchema = new Schema<TUser>({
   orders: { type: [OrderSchema], default: [] },
 });
 
-//Pre
+//Pre Hook Implement
 userSchema.pre('save', async function (next) {
   const user = this;
   user.password = await bcrypt.hash(user.password, Number(config.bcryptSalt));
   next();
 });
 
-//post
+//Post Hook Implement
 userSchema.post('save', function (doc, next) {
   doc.password = ' ';
   next();

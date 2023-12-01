@@ -126,7 +126,7 @@ const deletedUser = async (req: Request, res: Response) => {
         message: 'User not found',
         error: {
           code: 404,
-          description: 'User not found!',
+          description: 'User Not Found!',
         },
       });
     }
