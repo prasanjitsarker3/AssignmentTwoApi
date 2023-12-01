@@ -8,7 +8,7 @@ app.use(cors());
 
 app.use('/api/users', userRoutes);
 app.get('/', (req: Request, res: Response) => {
-  res.send('Mongoose Project Running!');
+  res.send('Express & Mongoose Project Running!');
 });
 
 export default app;
