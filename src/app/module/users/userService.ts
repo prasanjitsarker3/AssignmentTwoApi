@@ -35,6 +35,7 @@ const getSingleUserFromDb = async (userId: number) => {
   return singleUser;
 };
 
+//Update User
 const getUserUpdateFromDb = async (userId: number, userData: any) => {
   const user = await User.findOneAndUpdate({ userId }, userData, {
     new: true,
@@ -52,6 +53,7 @@ const getUserUpdateFromDb = async (userId: number, userData: any) => {
   return updateUser;
 };
 
+// Deleted User in Single
 const deletedUserFromDb = async (userId: number) => {
   const user = await User.findOneAndDelete({ userId });
   if (!user) {
@@ -62,7 +64,7 @@ const deletedUserFromDb = async (userId: number) => {
   return user;
 };
 
-// orders
+// Orders Products
 const addProductToDB = async (userId: number, productData: any) => {
   const user = await User.findOne({ userId });
   if (!user) {
@@ -81,6 +83,7 @@ const addProductToDB = async (userId: number, productData: any) => {
   return finalOrders;
 };
 
+//Get All Orders
 const getOrdersFromDB = async (userId: number) => {
   const user = await User.findOne({ userId });
 
@@ -93,6 +96,7 @@ const getOrdersFromDB = async (userId: number) => {
   return allOrders;
 };
 
+//Calculation product price
 const calculateTotalPrice = async (userId: number): Promise<number> => {
   const user = await User.findOne({ userId });
 

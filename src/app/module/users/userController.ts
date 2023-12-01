@@ -231,7 +231,7 @@ const calculateTotalPrice = async (req: Request, res: Response) => {
   }
 };
 
-export const UserController = {
+export const userController = {
   createUser,
   getAllUsers,
   getSingleUser,

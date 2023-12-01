@@ -1,15 +1,15 @@
 import express from 'express';
-import { UserController } from './userController';
+import { userController } from './userController';
 
 const router = express.Router();
 
-router.post('/', UserController.createUser);
-router.get('/', UserController.getAllUsers);
-router.get('/:userId', UserController.getSingleUser);
-router.patch('/:userId', UserController.getUpdateUser);
-router.delete('/:userId', UserController.deletedUser);
-router.put('/:userId/orders', UserController.addProductToDB);
-router.get('/:userId/orders', UserController.getOrdersFromDB);
-router.get('/:userId/orders/total-price', UserController.calculateTotalPrice);
+router.post('/', userController.createUser);
+router.get('/', userController.getAllUsers);
+router.get('/:userId', userController.getSingleUser);
+router.patch('/:userId', userController.getUpdateUser);
+router.delete('/:userId', userController.deletedUser);
+router.put('/:userId/orders', userController.addProductToDB);
+router.get('/:userId/orders', userController.getOrdersFromDB);
+router.get('/:userId/orders/total-price', userController.calculateTotalPrice);
 
 export const userRoutes = router;
