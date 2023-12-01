@@ -2,7 +2,7 @@
   "name": "assignmnt2",
   "version": "1.0.0",
   "description": "",
-  "main": "./dist/server.js",
+  "main": "index.js",
   "scripts": {
     "start:prod": "node ./dist/server.js",
     "startDev": "ts-node-dev --respawn --transpile-only src/server.ts",
